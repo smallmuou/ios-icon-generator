@@ -53,6 +53,9 @@ EXAMPLE:
 EOF
 }
 
+# Check ImageMagick
+command -v convert >/dev/null 2>&1 || { echo >&2 "The ImageMagick is not installed. Please use brew to install it first."; exit -1; }
+
 # Check param
 if [ $# != 2 ];then
     usage
