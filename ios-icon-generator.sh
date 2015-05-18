@@ -32,44 +32,62 @@ function usage() {
     exit -1
 }
 
-# check param
+# Check param
 if [ $# != 2 ];then
     usage
 fi
 
-
-#check dst path whether exist.
+# Check dst path whether exist.
 if [ ! -d "$DST_PATH" ];then
     mkdir -p "$DST_PATH"
 fi
 
-# covert, refer to:https://developer.apple.com/library/ios/qa/qa1686/_index.html
+# Generate, refer to:https://developer.apple.com/library/ios/qa/qa1686/_index.html
 
+echo 'Generate iTunesArtwork.png ...'
 convert $SRC_FILE -resize 512x512 $DST_PATH/iTunesArtwork.png
+echo 'Generate iTunesArtwork@2x.png ...'
 convert $SRC_FILE -resize 1024x1024 $DST_PATH/iTunesArtwork@2x.png
 
+echo 'Generate Icon-Small.png ...'
 convert $SRC_FILE -resize 29x29 $DST_PATH/Icon-Small.png
+echo 'Generate Icon-Small@2x.png ...'
 convert $SRC_FILE -resize 58x58 $DST_PATH/Icon-Small@2x.png
+echo 'Generate Icon-Small@3x.png ...'
 convert $SRC_FILE -resize 87x87 $DST_PATH/Icon-Small@3x.png
 
+echo 'Generate Icon-Small-40.png ...'
 convert $SRC_FILE -resize 40x40 $DST_PATH/Icon-Small-40.png
+echo 'Generate Icon-Small-40@2x.png ...'
 convert $SRC_FILE -resize 80x80 $DST_PATH/Icon-Small-40@2x.png
+echo 'Generate Icon-Small-40@3x.png ...'
 convert $SRC_FILE -resize 120x120 $DST_PATH/Icon-Small-40@3x.png
 
+echo 'Generate Icon-60.png ...'
 convert $SRC_FILE -resize 60x60 $DST_PATH/Icon-60.png
+echo 'Generate Icon-60@2x.png ...'
 convert $SRC_FILE -resize 120x120 $DST_PATH/Icon-60@2x.png
+echo 'Generate Icon-60@3x.png ...'
 convert $SRC_FILE -resize 180x180 $DST_PATH/Icon-60@3x.png
 
+echo 'Generate Icon-76.png ...'
 convert $SRC_FILE -resize 76x76 $DST_PATH/Icon-76.png
+echo 'Generate Icon-76@2x.png ...'
 convert $SRC_FILE -resize 152x152 $DST_PATH/Icon-76@2x.png
 
+echo 'Generate Icon.png ...'
 convert $SRC_FILE -resize 57x57 $DST_PATH/Icon.png
+echo 'Generate Icon@2x.png ...'
 convert $SRC_FILE -resize 114x114 $DST_PATH/Icon@2x.png
 
+echo 'Generate Icon-72.png ...'
 convert $SRC_FILE -resize 72x72 $DST_PATH/Icon-72.png
+echo 'Generate Icon-72@2x.png ...'
 convert $SRC_FILE -resize 144x144 $DST_PATH/Icon-72@2x.png
 
+echo 'Generate Icon-Small-50.png ...'
 convert $SRC_FILE -resize 50x50 $DST_PATH/Icon-Small-50.png
+echo 'Generate Icon-Small-50@2x.png ...'
 convert $SRC_FILE -resize 100x100 $DST_PATH/Icon-Small-50@2x.png
 
-echo 'Done.'
+echo 'Generate Done.'
