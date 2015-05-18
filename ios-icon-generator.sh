@@ -27,7 +27,19 @@ DST_PATH=$2
 
 VERSION=1.0.0
 
-function usage() {
+info() {
+     local green="\033[1;32m"
+     local normal="\033[0m"
+     echo "[${green}INFO${normal}] $1"
+}
+
+error() {
+     local red="\033[1;31m"
+     local normal="\033[0m"
+     echo "[${red}ERROR${normal}] $1"
+}
+
+usage() {
 cat << EOF
 VERSION: $VERSION
 USAGE:
@@ -54,7 +66,7 @@ EOF
 }
 
 # Check ImageMagick
-command -v convert >/dev/null 2>&1 || { echo >&2 "The ImageMagick is not installed. Please use brew to install it first."; exit -1; }
+command -v convert >/dev/null 2>&1 || { error >&2 "The ImageMagick is not installed. Please use brew to install it first."; exit -1; }
 
 # Check param
 if [ $# != 2 ];then
@@ -69,50 +81,50 @@ fi
 
 # Generate, refer to:https://developer.apple.com/library/ios/qa/qa1686/_index.html
 
-echo 'Generate iTunesArtwork.png ...'
+info 'Generate iTunesArtwork.png ...'
 convert $SRC_FILE -resize 512x512 $DST_PATH/iTunesArtwork.png
-echo 'Generate iTunesArtwork@2x.png ...'
+info 'Generate iTunesArtwork@2x.png ...'
 convert $SRC_FILE -resize 1024x1024 $DST_PATH/iTunesArtwork@2x.png
 
-echo 'Generate Icon-Small.png ...'
+info 'Generate Icon-Small.png ...'
 convert $SRC_FILE -resize 29x29 $DST_PATH/Icon-Small.png
-echo 'Generate Icon-Small@2x.png ...'
+info 'Generate Icon-Small@2x.png ...'
 convert $SRC_FILE -resize 58x58 $DST_PATH/Icon-Small@2x.png
-echo 'Generate Icon-Small@3x.png ...'
+info 'Generate Icon-Small@3x.png ...'
 convert $SRC_FILE -resize 87x87 $DST_PATH/Icon-Small@3x.png
 
-echo 'Generate Icon-Small-40.png ...'
+info 'Generate Icon-Small-40.png ...'
 convert $SRC_FILE -resize 40x40 $DST_PATH/Icon-Small-40.png
-echo 'Generate Icon-Small-40@2x.png ...'
+info 'Generate Icon-Small-40@2x.png ...'
 convert $SRC_FILE -resize 80x80 $DST_PATH/Icon-Small-40@2x.png
-echo 'Generate Icon-Small-40@3x.png ...'
+info 'Generate Icon-Small-40@3x.png ...'
 convert $SRC_FILE -resize 120x120 $DST_PATH/Icon-Small-40@3x.png
 
-echo 'Generate Icon-60.png ...'
+info 'Generate Icon-60.png ...'
 convert $SRC_FILE -resize 60x60 $DST_PATH/Icon-60.png
-echo 'Generate Icon-60@2x.png ...'
+info 'Generate Icon-60@2x.png ...'
 convert $SRC_FILE -resize 120x120 $DST_PATH/Icon-60@2x.png
-echo 'Generate Icon-60@3x.png ...'
+info 'Generate Icon-60@3x.png ...'
 convert $SRC_FILE -resize 180x180 $DST_PATH/Icon-60@3x.png
 
-echo 'Generate Icon-76.png ...'
+info 'Generate Icon-76.png ...'
 convert $SRC_FILE -resize 76x76 $DST_PATH/Icon-76.png
-echo 'Generate Icon-76@2x.png ...'
+info 'Generate Icon-76@2x.png ...'
 convert $SRC_FILE -resize 152x152 $DST_PATH/Icon-76@2x.png
 
-echo 'Generate Icon.png ...'
+info 'Generate Icon.png ...'
 convert $SRC_FILE -resize 57x57 $DST_PATH/Icon.png
-echo 'Generate Icon@2x.png ...'
+info 'Generate Icon@2x.png ...'
 convert $SRC_FILE -resize 114x114 $DST_PATH/Icon@2x.png
 
-echo 'Generate Icon-72.png ...'
+info 'Generate Icon-72.png ...'
 convert $SRC_FILE -resize 72x72 $DST_PATH/Icon-72.png
-echo 'Generate Icon-72@2x.png ...'
+info 'Generate Icon-72@2x.png ...'
 convert $SRC_FILE -resize 144x144 $DST_PATH/Icon-72@2x.png
 
-echo 'Generate Icon-Small-50.png ...'
+info 'Generate Icon-Small-50.png ...'
 convert $SRC_FILE -resize 50x50 $DST_PATH/Icon-Small-50.png
-echo 'Generate Icon-Small-50@2x.png ...'
+info 'Generate Icon-Small-50@2x.png ...'
 convert $SRC_FILE -resize 100x100 $DST_PATH/Icon-Small-50@2x.png
 
-echo 'Generate Done.'
+info 'Generate Done.'
