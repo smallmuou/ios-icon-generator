@@ -28,13 +28,34 @@ DST_PATH=$2
 VERSION=0.1
 
 function usage() {
-    echo "Usage: $0 srcfile dstpath"
-    exit -1
+cat << EOF
+USAGE:
+    $0 srcfile dstpath
+
+DESCRIPTION:
+    This script aim to generate ios app icons easier and simply.
+
+    srcfile - The source png image. Preferably above 1024x1024
+    dstpath - The destination path where the icons generate to.
+
+    This script is depend on ImageMagick. So you must install ImageMagick first
+    You can use 'sudo brew install ImageMagick' to install it
+
+AUTHOR:
+    Pawpaw<lvyexuwenfa100@126.com>
+
+LICENSE:
+    This script follow MIT license.
+
+EXAMPLE:
+    $0 1024.png ~/123
+EOF
 }
 
 # Check param
 if [ $# != 2 ];then
     usage
+    exit -1
 fi
 
 # Check dst path whether exist.
