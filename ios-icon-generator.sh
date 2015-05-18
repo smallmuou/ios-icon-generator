@@ -25,10 +25,11 @@ set -e
 SRC_FILE=$1
 DST_PATH=$2
 
-VERSION=0.1
+VERSION=1.0.0
 
 function usage() {
 cat << EOF
+VERSION: $VERSION
 USAGE:
     $0 srcfile dstpath
 
