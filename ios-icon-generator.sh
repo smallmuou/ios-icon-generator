@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (C) 2014 Wenva <lvyexuwenfa100@126.com>
 # 
@@ -30,13 +30,13 @@ VERSION=1.0.0
 info() {
      local green="\033[1;32m"
      local normal="\033[0m"
-     echo "[${green}INFO${normal}] $1"
+     echo -e "[${green}INFO${normal}] $1"
 }
 
 error() {
      local red="\033[1;31m"
      local normal="\033[0m"
-     echo "[${red}ERROR${normal}] $1"
+     echo -e "[${red}ERROR${normal}] $1"
 }
 
 usage() {
