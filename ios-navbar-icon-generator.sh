@@ -89,11 +89,11 @@ FILENAME=$(basename "$SRC_FILE")
 FILENAME="${FILENAME%.*}"
 OUT_FILENAME="$FILENAME.png"
 
-info "Generate $OUT_FILENAME ..."
-convert "$SRC_FILE" -resize 22x22 "$DST_PATH/$OUT_FILENAME"
-info "Generate $OUT_FILENAME@2x.png ..."
-convert "$SRC_FILE" -resize 44x44 "$DST_PATH/$OUT_FILENAME@2x.png"
-info "Generate $OUT_FILENAME@3x.png ..."
-convert "$SRC_FILE" -resize 66x66 "$DST_PATH/$OUT_FILENAME@3x.png"
+info "Generate $FILENAME.png ..."
+convert "$SRC_FILE" -resize 22x22 "$DST_PATH/$FILENAME.png"
+info "Generate $FILENAME@2x.png ..."
+convert "$SRC_FILE" -resize 44x44 "$DST_PATH/$FILENAME@2x.png"
+info "Generate $FILENAME@3x.png ..."
+convert "$SRC_FILE" -resize 66x66 "$DST_PATH/$FILENAME@3x.png"
 
 info 'Generate Done.'
