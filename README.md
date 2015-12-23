@@ -66,6 +66,9 @@ StarnetdeMacBook-Pro:ios-icon-generator starnet$ ./ios-icon-generator.sh ~/Downl
 [INFO] Generate Done.</pre>
 PS: You can find out the icons in ~/output directory.
 
+### Navigation bar items
+There is also another shell script `ios-navbar-icon-generator.sh` to generate navigation bar icons, that works in the same way.
+
 ### Refer
 * [App Icons on iPad and iPhone](https://developer.apple.com/library/ios/qa/qa1686/_index.html)
 * [iOS Human Interface Guidelines](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)
