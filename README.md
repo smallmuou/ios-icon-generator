@@ -66,6 +66,14 @@ StarnetdeMacBook-Pro:ios-icon-generator starnet$ ./ios-icon-generator.sh ~/Downl
 [INFO] Generate Done.</pre>
 PS: You can find out the icons in ~/output directory.
 
+### Navigation bar items
+There is also another shell script `ios-navbar-icon-generator.sh` to generate navigation bar icons, that works in the same way.
+
+### Generic images
+With the script `os-custom-icon-generator.sh` you can generate a set of three images to use in your app (myimg.png, myimg@2.png, myimg@3.png).
+Use it in this way `./ios-custom-icon-generator.sh icon-big.png ~/asset_dir 100`. The third parameter is the final base size of the image: using 100, your output image.png will be 100x100 px, image@2.png 200x200 and image@3.png 300x300.
+`
+
 ### Refer
 * [App Icons on iPad and iPhone](https://developer.apple.com/library/ios/qa/qa1686/_index.html)
 * [iOS Human Interface Guidelines](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)
