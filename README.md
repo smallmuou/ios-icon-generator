@@ -33,7 +33,7 @@ EXAMPLE:
 	
 	Before you run this script, please check whether you had install ImageMagick. If you don't have install. Follow this:
 	<pre>
-	sudo brew install ImageMagick</pre>
+	brew install ImageMagick</pre>
 
 2. Clone And Chmod
 	<pre>
