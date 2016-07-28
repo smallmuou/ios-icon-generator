@@ -25,7 +25,40 @@ set -e
 SRC_FILE="$1"
 DST_PATH="$2"
 
+AI_SETTINGS="-antialias -background transparent -density 600"
+
 VERSION=1.0.0
+
+SIZES=(
+    "512x512:iTunesArtwork.png"
+    "1024x1024:iTunesArtwork@2x.png"
+
+    "29x29:Icon-Small.png"
+    "58x58:Icon-Small@2x.png"
+    "87x87:Icon-Small@3x.png"
+
+    "40x40:Icon-Small-40.png"
+    "80x80:Icon-Small-40@2x.png"
+    "120x120:Icon-Small-40@3x.png"
+
+    "60x60:Icon-60.png"
+    "120x120:Icon-60@2x.png"
+    "180x180:Icon-60@3x.png"
+
+    "76x76:Icon-76.png"
+    "152x152:Icon-76@2x.png"
+
+    "167x167:Icon-83.5@2x.png"
+
+    "57x57:Icon.png"
+    "114x114:Icon@2x.png"
+
+    "72x72:Icon-72.png"
+    "144x144:Icon-72@2x.png"
+
+    "50x50:Icon-Small-50.png"
+    "100x100:Icon-Small-50@2x.png"
+)
 
 info() {
      local green="\033[1;32m"
@@ -56,12 +89,13 @@ DESCRIPTION:
 
 AUTHOR:
     Pawpaw<lvyexuwenfa100@126.com>
+    Vladimir<vladimir.bilyov@gmail.com>
 
 LICENSE:
     This script follow MIT license.
 
 EXAMPLE:
-    $0 1024.png ~/123
+    $0 1024.ai ~/123
 EOF
 }
 
@@ -80,6 +114,23 @@ if [ ! -d "$DST_PATH" ];then
 fi
 
 # Generate, refer to:https://developer.apple.com/library/ios/qa/qa1686/_index.html
+
+ext=${SRC_FILE##*.}
+
+for size in "${SIZES[@]}" ; do
+    ICON_SIZE=${size%%:*}
+    ICON_FILE=${size#*:}
+
+    info 'Generate $ICON_FILE ...'
+    if [ "$ext" = "ai" ]; then
+        convert $AI_SETTINGS -resize $ICON_SIZE "$SRC_FILE" "$DST_PATH/$ICON_FILE"
+    else
+        convert "$SRC_FILE" -resize $ICON_SIZE "$DST_PATH/$ICON_FILE"
+    fi
+done
+
+info 'Generate Done.'
+exit 0
 
 info 'Generate iTunesArtwork.png ...'
 convert "$SRC_FILE" -resize 512x512 "$DST_PATH/iTunesArtwork.png"
@@ -130,4 +181,3 @@ convert "$SRC_FILE" -resize 50x50 "$DST_PATH/Icon-Small-50.png"
 info 'Generate Icon-Small-50@2x.png ...'
 convert "$SRC_FILE" -resize 100x100 "$DST_PATH/Icon-Small-50@2x.png"
 
-info 'Generate Done.'
