@@ -33,13 +33,13 @@ SIZES=(
     "512x512:iTunesArtwork.png"
     "1024x1024:iTunesArtwork@2x.png"
 
-    "29x29:Icon-Small.png"
-    "58x58:Icon-Small@2x.png"
-    "87x87:Icon-Small@3x.png"
+    "29x29:Icon-29.png"
+    "58x58:Icon-29@2x.png"
+    "87x87:Icon-29@3x.png"
 
-    "40x40:Icon-Small-40.png"
-    "80x80:Icon-Small-40@2x.png"
-    "120x120:Icon-Small-40@3x.png"
+    "40x40:Icon-40.png"
+    "80x80:Icon-40@2x.png"
+    "120x120:Icon-40@3x.png"
 
     "60x60:Icon-60.png"
     "120x120:Icon-60@2x.png"
@@ -50,14 +50,14 @@ SIZES=(
 
     "167x167:Icon-83.5@2x.png"
 
-    "57x57:Icon.png"
-    "114x114:Icon@2x.png"
+    "57x57:Icon-57.png"
+    "114x114:Icon-57@2x.png"
 
     "72x72:Icon-72.png"
     "144x144:Icon-72@2x.png"
 
-    "50x50:Icon-Small-50.png"
-    "100x100:Icon-Small-50@2x.png"
+    "50x50:Icon-50.png"
+    "100x100:Icon-50@2x.png"
 )
 
 info() {
