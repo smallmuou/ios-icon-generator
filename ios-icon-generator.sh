@@ -121,7 +121,7 @@ for size in "${SIZES[@]}" ; do
     ICON_SIZE=${size%%:*}
     ICON_FILE=${size#*:}
 
-    info 'Generate $ICON_FILE ...'
+    info "Generate $ICON_FILE ..."
     if [ "$ext" = "ai" ]; then
         convert $AI_SETTINGS -resize $ICON_SIZE "$SRC_FILE" "$DST_PATH/$ICON_FILE"
     else
