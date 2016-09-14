@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 #
 # Copyright (C) 2015 Alessandro Miliucci<lifeisfoo@gmail.com>
 # 
@@ -72,15 +72,17 @@ EXAMPLE:
 EOF
 }
 
+SVG_SETTINGS="-background none -density 1200"
+
 function _convert(){
     SRCFILE=$1
-    FILEEXT=${FILENAME##*.}
+    FILEEXT=${SRCFILE##*.}
     SIZE=$2
     DSTFILE=$3
 
     info "Generate $DSTFILE ..."
     if [ $FILEEXT = "svg" ]; then
-        convert -density 1200 -resize $SIZE $SRCFILE $DSTFILE
+        convert $SVG_SETTINGS -resize $SIZE $SRCFILE $DSTFILE
     else
         convert $SRCFILE -resize $SIZE $DSTFILE
     fi
@@ -113,12 +115,12 @@ _convert "$SRC_FILE" "$SIZE_WIDTH"x"$SIZE_HEIGHT" "$DST_PATH/$FILENAME.png"
 DOUBLE_WIDTH=$(($SIZE_WIDTH * 2))
 DOUBLE_HEIGHT=$(($SIZE_HEIGHT * 2))
 #convert "$SRC_FILE" -resize "$DOUBLE_SIZE"x"$DOUBLE_HEIGHT" "$DST_PATH/$FILENAME@2x.png"
-_convert "$SRC_FILE" "$DOUBLE_SIZE"x"$DOUBLE_HEIGHT" "$DST_PATH/$FILENAME@2x.png"
+_convert "$SRC_FILE" "$DOUBLE_WIDTH"x"$DOUBLE_HEIGHT" "$DST_PATH/$FILENAME@2x.png"
 
 TRIPLE_WIDTH=$(($SIZE_WIDTH * 3))
 TRIPLE_HEIGHT=$(($SIZE_HEIGHT * 3))
 #info "Generate $FILENAME@3x.png ..."
 #convert "$SRC_FILE" -resize "$TRIPLE_SIZE"x"$TRIPLE_HEIGHT" "$DST_PATH/$FILENAME@3x.png"
-_convert "$SRC_FILE" "$TRIPLE_SIZE"x"$TRIPLE_HEIGHT" "$DST_PATH/$FILENAME@3x.png"
+_convert "$SRC_FILE" "$TRIPLE_WIDTH"x"$TRIPLE_HEIGHT" "$DST_PATH/$FILENAME@3x.png"
 
 info 'Generate Done.'
