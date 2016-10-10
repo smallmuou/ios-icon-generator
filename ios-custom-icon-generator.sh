@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 #
 # Copyright (C) 2015 Alessandro Miliucci<lifeisfoo@gmail.com>
 # 
@@ -58,7 +58,7 @@ DESCRIPTION:
     size - The destination size in pixel, only one number (e.g 60)
 
     This script is depend on ImageMagick. So you must install ImageMagick first
-    You can use 'sudo brew install ImageMagick' to install it
+    Please see http://www.imagemagick.org/script/binary-releases.php for installation instructions
 
 AUTHOR:
     Alessandro Miliucci<lifeisfoo@gmail.com>

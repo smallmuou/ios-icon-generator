@@ -55,7 +55,7 @@ DESCRIPTION:
     dstpath - The destination path where the icons generate to.
 
     This script is depend on ImageMagick. So you must install ImageMagick first
-    You can use 'sudo brew install ImageMagick' to install it
+    Please see http://www.imagemagick.org/script/binary-releases.php for installation instructions
 
 AUTHOR:
     Alessandro Miliucci<lifeisfoo@gmail.com>
