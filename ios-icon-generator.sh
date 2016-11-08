@@ -25,7 +25,40 @@ set -e
 SRC_FILE="$1"
 DST_PATH="$2"
 
+AI_SETTINGS="-antialias -background transparent -density 600"
+
 VERSION=1.0.0
+
+SIZES=(
+    "512x512:iTunesArtwork.png"
+    "1024x1024:iTunesArtwork@2x.png"
+
+    "29x29:Icon-29.png"
+    "58x58:Icon-29@2x.png"
+    "87x87:Icon-29@3x.png"
+
+    "40x40:Icon-40.png"
+    "80x80:Icon-40@2x.png"
+    "120x120:Icon-40@3x.png"
+
+    "60x60:Icon-60.png"
+    "120x120:Icon-60@2x.png"
+    "180x180:Icon-60@3x.png"
+
+    "76x76:Icon-76.png"
+    "152x152:Icon-76@2x.png"
+
+    "167x167:Icon-83.5@2x.png"
+
+    "57x57:Icon-57.png"
+    "114x114:Icon-57@2x.png"
+
+    "72x72:Icon-72.png"
+    "144x144:Icon-72@2x.png"
+
+    "50x50:Icon-50.png"
+    "100x100:Icon-50@2x.png"
+)
 
 info() {
      local green="\033[1;32m"
@@ -52,16 +85,17 @@ DESCRIPTION:
     dstpath - The destination path where the icons generate to.
 
     This script is depend on ImageMagick. So you must install ImageMagick first
-    You can use 'sudo brew install ImageMagick' to install it
+    Please see http://www.imagemagick.org/script/binary-releases.php for installation instructions 
 
 AUTHOR:
     Pawpaw<lvyexuwenfa100@126.com>
+    Vladimir<vladimir.bilyov@gmail.com>
 
 LICENSE:
     This script follow MIT license.
 
 EXAMPLE:
-    $0 1024.png ~/123
+    $0 1024.ai ~/123
 EOF
 }
 
@@ -81,53 +115,18 @@ fi
 
 # Generate, refer to:https://developer.apple.com/library/ios/qa/qa1686/_index.html
 
-info 'Generate iTunesArtwork.png ...'
-convert "$SRC_FILE" -resize 512x512 "$DST_PATH/iTunesArtwork.png"
-info 'Generate iTunesArtwork@2x.png ...'
-convert "$SRC_FILE" -resize 1024x1024 "$DST_PATH/iTunesArtwork@2x.png"
+ext=${SRC_FILE##*.}
 
-info 'Generate Icon-Small.png ...'
-convert "$SRC_FILE" -resize 29x29 "$DST_PATH/Icon-Small.png"
-info 'Generate Icon-Small@2x.png ...'
-convert "$SRC_FILE" -resize 58x58 "$DST_PATH/Icon-Small@2x.png"
-info 'Generate Icon-Small@3x.png ...'
-convert "$SRC_FILE" -resize 87x87 "$DST_PATH/Icon-Small@3x.png"
+for size in "${SIZES[@]}" ; do
+    ICON_SIZE=${size%%:*}
+    ICON_FILE=${size#*:}
 
-info 'Generate Icon-Small-40.png ...'
-convert "$SRC_FILE" -resize 40x40 "$DST_PATH/Icon-Small-40.png"
-info 'Generate Icon-Small-40@2x.png ...'
-convert "$SRC_FILE" -resize 80x80 "$DST_PATH/Icon-Small-40@2x.png"
-info 'Generate Icon-Small-40@3x.png ...'
-convert "$SRC_FILE" -resize 120x120 "$DST_PATH/Icon-Small-40@3x.png"
-
-info 'Generate Icon-60.png ...'
-convert "$SRC_FILE" -resize 60x60 "$DST_PATH/Icon-60.png"
-info 'Generate Icon-60@2x.png ...'
-convert "$SRC_FILE" -resize 120x120 "$DST_PATH/Icon-60@2x.png"
-info 'Generate Icon-60@3x.png ...'
-convert "$SRC_FILE" -resize 180x180 "$DST_PATH/Icon-60@3x.png"
-
-info 'Generate Icon-76.png ...'
-convert "$SRC_FILE" -resize 76x76 "$DST_PATH/Icon-76.png"
-info 'Generate Icon-76@2x.png ...'
-convert "$SRC_FILE" -resize 152x152 "$DST_PATH/Icon-76@2x.png"
-
-info 'Generate Icon-83.5@2x.png ...'
-convert "$SRC_FILE" -resize 167x167 "$DST_PATH/Icon-83.5@2x.png"
-
-info 'Generate Icon.png ...'
-convert "$SRC_FILE" -resize 57x57 "$DST_PATH/Icon.png"
-info 'Generate Icon@2x.png ...'
-convert "$SRC_FILE" -resize 114x114 "$DST_PATH/Icon@2x.png"
-
-info 'Generate Icon-72.png ...'
-convert "$SRC_FILE" -resize 72x72 "$DST_PATH/Icon-72.png"
-info 'Generate Icon-72@2x.png ...'
-convert "$SRC_FILE" -resize 144x144 "$DST_PATH/Icon-72@2x.png"
-
-info 'Generate Icon-Small-50.png ...'
-convert "$SRC_FILE" -resize 50x50 "$DST_PATH/Icon-Small-50.png"
-info 'Generate Icon-Small-50@2x.png ...'
-convert "$SRC_FILE" -resize 100x100 "$DST_PATH/Icon-Small-50@2x.png"
+    info "Generate $ICON_FILE ..."
+    if [ "$ext" = "ai" ]; then
+        convert $AI_SETTINGS -resize $ICON_SIZE "$SRC_FILE" "$DST_PATH/$ICON_FILE"
+    else
+        convert "$SRC_FILE" -resize $ICON_SIZE "$DST_PATH/$ICON_FILE"
+    fi
+done
 
 info 'Generate Done.'
