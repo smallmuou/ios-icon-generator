@@ -85,6 +85,7 @@ info 'Generating images...'
 convert "$SRC_FILE" -resize 512x512 "$DST_PATH/iTunesArtwork512.png"
 convert "$SRC_FILE" -resize 1024x1024 "$DST_PATH/iTunesArtwork512@2x.png"
 
+convert "$SRC_FILE" -resize 20x20 "$DST_PATH/20x20.png"
 convert "$SRC_FILE" -resize 40x40 "$DST_PATH/20x20@2x.png"
 convert "$SRC_FILE" -resize 60x60 "$DST_PATH/20x20@3x.png"
 
@@ -96,8 +97,22 @@ convert "$SRC_FILE" -resize 40x40 "$DST_PATH/40x40.png"
 convert "$SRC_FILE" -resize 80x80 "$DST_PATH/40x40@2x.png"
 convert "$SRC_FILE" -resize 120x120 "$DST_PATH/40x40@3x.png"
 
+convert "$SRC_FILE" -resize 50x50 "$DST_PATH/50x50.png"
+convert "$SRC_FILE" -resize 100x100 "$DST_PATH/50x50@2x.png"
+
+convert "$SRC_FILE" -resize 57x57 "$DST_PATH/57x57.png"
+convert "$SRC_FILE" -resize 114x114 "$DST_PATH/57x57@2x.png"
+
 convert "$SRC_FILE" -resize 60x60 "$DST_PATH/60x60.png"
 convert "$SRC_FILE" -resize 120x120 "$DST_PATH/60x60@2x.png"
 convert "$SRC_FILE" -resize 180x180 "$DST_PATH/60x60@3x.png"
+
+convert "$SRC_FILE" -resize 72x72 "$DST_PATH/72x72.png"
+convert "$SRC_FILE" -resize 144x144 "$DST_PATH/72x72@2x.png"
+
+convert "$SRC_FILE" -resize 76x76 "$DST_PATH/76x76.png"
+convert "$SRC_FILE" -resize 152x152 "$DST_PATH/76x76@2x.png"
+
+convert "$SRC_FILE" -resize 167x167 "$DST_PATH/83.5x83.5@2x.png"
 
 info 'Generate Done.'
