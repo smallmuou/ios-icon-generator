@@ -124,6 +124,9 @@ convert "$SRC_FILE" -resize 57x57 "$DST_PATH/Icon-57.png"
 info 'Generate Icon-57@2x.png ...'
 convert "$SRC_FILE" -resize 114x114 "$DST_PATH/Icon-57@2x.png"
 
+info 'Generate Icon-83.5@2x.png ...'
+convert "$SRC_FILE" -resize 167x167 "$DST_PATH/Icon-83.5@2x.png"
+
 info 'Generate Icon-72.png ...'
 convert "$SRC_FILE" -resize 72x72 "$DST_PATH/Icon-72.png"
 info 'Generate Icon-72@2x.png ...'
