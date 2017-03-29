@@ -125,6 +125,48 @@ generate_v7(){
     convert "$SRC_FILE" -resize 100x100 "$DST_PATH/Icon-50@2x.png"
 }
 
+generate_v8(){
+    # Generate, refer to:https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon/
+
+    info 'Generating iPhone icons.'
+    convert "$SRC_FILE" -resize 40x40 "$DST_PATH/iphone20@2x.png"
+    convert "$SRC_FILE" -resize 60x60 "$DST_PATH/iphone20@3x.png"
+    convert "$SRC_FILE" -resize 29x29 "$DST_PATH/iphone29@1x.png"
+    convert "$SRC_FILE" -resize 58x58 "$DST_PATH/iphone29@2x.png"
+    convert "$SRC_FILE" -resize 87x87 "$DST_PATH/iphone29@3x.png"
+    convert "$SRC_FILE" -resize 80x80 "$DST_PATH/iphone40@2x.png"
+    convert "$SRC_FILE" -resize 120x120 "$DST_PATH/iphone40@3x.png"
+    convert "$SRC_FILE" -resize 57x57 "$DST_PATH/iphone57@1x.png"
+    convert "$SRC_FILE" -resize 114x114 "$DST_PATH/iphone57@2x.png"
+    convert "$SRC_FILE" -resize 120x120 "$DST_PATH/iphone60@2x.png"
+    convert "$SRC_FILE" -resize 180x180 "$DST_PATH/iphone60@3x.png"
+
+    info 'Generating iPad icons.'
+    convert "$SRC_FILE" -resize 20x20 "$DST_PATH/ipad20@1x.png"
+    convert "$SRC_FILE" -resize 40x40 "$DST_PATH/ipad20@2x.png"
+    convert "$SRC_FILE" -resize 29x29 "$DST_PATH/ipad29@1x.png"
+    convert "$SRC_FILE" -resize 58x58 "$DST_PATH/ipad29@2x.png"
+    convert "$SRC_FILE" -resize 40x40 "$DST_PATH/ipad40@1x.png"
+    convert "$SRC_FILE" -resize 80x80 "$DST_PATH/ipad40@2x.png"
+    convert "$SRC_FILE" -resize 50x50 "$DST_PATH/ipad50@1x.png"
+    convert "$SRC_FILE" -resize 100x100 "$DST_PATH/ipad50@2x.png"
+    convert "$SRC_FILE" -resize 72x72 "$DST_PATH/ipad72@1x.png"
+    convert "$SRC_FILE" -resize 144x144 "$DST_PATH/ipad72@2x.png"
+    convert "$SRC_FILE" -resize 76x76 "$DST_PATH/ipad76@1x.png"
+    convert "$SRC_FILE" -resize 152x152 "$DST_PATH/ipad76@2x.png"
+    convert "$SRC_FILE" -resize 167x167 "$DST_PATH/ipad83.5@2x.png"
+
+    info 'Generating watch icons.'
+    convert "$SRC_FILE" -resize 48x48 "$DST_PATH/watch-38mm-notification@2x.png"
+    convert "$SRC_FILE" -resize 110x110 "$DST_PATH/watch-42mm-notification@2x.png"
+    convert "$SRC_FILE" -resize 58x58 "$DST_PATH/watch29-companion@2x.png"
+    convert "$SRC_FILE" -resize 87x87 "$DST_PATH/watch29-companion@3x.png"
+    convert "$SRC_FILE" -resize 80x80 "$DST_PATH/watch-38mm-launcher@2x.png"
+    convert "$SRC_FILE" -resize 88x88 "$DST_PATH/watch-42mm-longLook@2x.png"
+    convert "$SRC_FILE" -resize 172x172 "$DST_PATH/watch-38mm-quickLook@2x.png"
+    convert "$SRC_FILE" -resize 196x196 "$DST_PATH/watch-42mm-quickLook@2x.png"
+}
+
 # Check ImageMagick
 command -v convert >/dev/null 2>&1 || { error >&2 "The ImageMagick is not installed. Please use brew to install it first."; exit -1; }
 
