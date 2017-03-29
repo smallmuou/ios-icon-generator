@@ -165,6 +165,9 @@ generate_v8(){
     convert "$SRC_FILE" -resize 88x88 "$DST_PATH/watch-42mm-longLook@2x.png"
     convert "$SRC_FILE" -resize 172x172 "$DST_PATH/watch-38mm-quickLook@2x.png"
     convert "$SRC_FILE" -resize 196x196 "$DST_PATH/watch-42mm-quickLook@2x.png"
+
+    info 'Coping Contents.json ...'
+    cp "Contents.json" "$DST_PATH/Contents.json"
 }
 
 # Check ImageMagick
