@@ -24,6 +24,7 @@ set -e
 
 SRC_FILE="$1"
 DST_PATH="$2"
+XC_VERS="$3"
 
 VERSION=1.0.0
 
@@ -43,13 +44,14 @@ usage() {
 cat << EOF
 VERSION: $VERSION
 USAGE:
-    $0 srcfile dstpath
+    $0 srcfile dstpath xcvers
 
 DESCRIPTION:
     This script aim to generate ios app icons easier and simply.
 
     srcfile - The source png image. Preferably above 1024x1024
     dstpath - The destination path where the icons generate to.
+    xcvers - The xcode version you are using(optional, default is 7).
 
     This script is depend on ImageMagick. So you must install ImageMagick first
     You can use 'sudo brew install ImageMagick' to install it
@@ -174,7 +176,7 @@ generate_v8(){
 command -v convert >/dev/null 2>&1 || { error >&2 "The ImageMagick is not installed. Please use brew to install it first."; exit -1; }
 
 # Check param
-if [ $# != 2 ];then
+if [ $# != 2 ] && [ $# != 3 ];then
     usage
     exit -1
 fi
@@ -184,6 +186,10 @@ if [ ! -d "$DST_PATH" ];then
     mkdir -p "$DST_PATH"
 fi
 
-generate_v7
+if [ "$XC_VERS" == "8" ]; then
+    generate_v8
+else
+    generate_v7
+fi
 
 info 'Generate Done.'
