@@ -72,7 +72,17 @@ There is also another shell script `ios-navbar-icon-generator.sh` to generate na
 ### Generic images
 With the script `os-custom-icon-generator.sh` you can generate a set of three images to use in your app (myimg.png, myimg@2.png, myimg@3.png).
 Use it in this way `./ios-custom-icon-generator.sh icon-big.png ~/asset_dir 100`. The third parameter is the final base size of the image: using 100, your output image.png will be 100x100 px, image@2.png 200x200 and image@3.png 300x300.
-`
+
+### Supported source formats
+
+* JPG
+* PNG
+* SVG (with custom settings: -background none -density 1200 )
+* TIFF
+* etc
+
+see full list running `identify -list format`. Please note: some formats may require additional parameters
+
 
 ### Refer
 * [App Icons on iPad and iPhone](https://developer.apple.com/library/ios/qa/qa1686/_index.html)
