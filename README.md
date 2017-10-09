@@ -78,6 +78,7 @@ There is also another shell script `ios-navbar-icon-generator.sh` to generate na
 
 ### Generic images
 With the script `os-custom-icon-generator.sh` you can generate a set of three images to use in your app (myimg.png, myimg@2.png, myimg@3.png).
+
 Use it in this way `./ios-custom-icon-generator.sh icon-big.png ~/asset_dir 100`. The third parameter is the final base size of the image: using 100, your output image.png will be 100x100 px, image@2.png 200x200 and image@3.png 300x300.
 `
 
