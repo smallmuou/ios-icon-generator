@@ -1,20 +1,20 @@
 #!/bin/bash
 #
 # Copyright (C) 2015 Alessandro Miliucci<lifeisfoo@gmail.com>
-# 
+#
 # Based on https://github.com/smallmuou/ios-icon-generator/blob/master/ios-icon-generator.sh
 # from Wenva <lvyexuwenfa100@126.com>
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is furnished
 # to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -29,7 +29,7 @@ SRC_FILE="$1"
 DST_PATH="$2"
 SIZE="$3"
 
-VERSION=1.0.0
+VERSION=1.1.0
 
 info() {
      local green="\033[1;32m"
@@ -56,9 +56,6 @@ DESCRIPTION:
     dstpath - The destination path where the icons generate to.
     size - The destination size in pixel, only one number (e.g 60)
 
-    This script is depend on ImageMagick. So you must install ImageMagick first
-    You can use 'sudo brew install ImageMagick' to install it
-
 AUTHOR:
     Alessandro Miliucci<lifeisfoo@gmail.com>
 
@@ -69,9 +66,6 @@ EXAMPLE:
     $0 icon-big.png ~/asset_dir 100
 EOF
 }
-
-# Check ImageMagick
-command -v convert >/dev/null 2>&1 || { error >&2 "The ImageMagick is not installed. Please use brew to install it first."; exit -1; }
 
 # Check param
 if [ $# != 3 ];then
@@ -92,12 +86,12 @@ FILENAME="${FILENAME%.*}"
 OUT_FILENAME="$FILENAME.png"
 
 info "Generate $FILENAME.png ..."
-convert "$SRC_FILE" -resize "$SIZE"x"$SIZE" "$DST_PATH/$FILENAME.png"
+sips "$SRC_FILE" -Z $SIZE --out "$DST_PATH/$FILENAME.png"
 info "Generate $FILENAME@2x.png ..."
 DOUBLE_SIZE=$(($SIZE * 2))
-convert "$SRC_FILE" -resize "$DOUBLE_SIZE"x"$DOUBLE_SIZE" "$DST_PATH/$FILENAME@2x.png"
+sips "$SRC_FILE" -Z $DOUBLE_SIZE --out "$DST_PATH/$FILENAME@2x.png"
 TRIPLE_SIZE=$(($SIZE * 3))
 info "Generate $FILENAME@3x.png ..."
-convert "$SRC_FILE" -resize "$TRIPLE_SIZE"x"$TRIPLE_SIZE" "$DST_PATH/$FILENAME@3x.png"
+sips "$SRC_FILE" -Z $TRIPLE_SIZE --out "$DST_PATH/$FILENAME@3x.png"
 
 info 'Generate Done.'
