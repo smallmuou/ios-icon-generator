@@ -29,7 +29,7 @@ SRC_FILE="$1"
 DST_PATH="$2"
 SIZE="$3"
 
-VERSION=1.0.0
+VERSION=1.1.0
 
 info() {
      local green="\033[1;32m"
