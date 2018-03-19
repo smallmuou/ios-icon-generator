@@ -82,59 +82,59 @@ fi
 # Generate, refer to:https://developer.apple.com/library/ios/qa/qa1686/_index.html
 
 info 'Generate iTunesArtwork.png ...'
-convert "$SRC_FILE" -resize 512x512 "$DST_PATH/iTunesArtwork.png"
+convert "$SRC_FILE" -alpha off -resize 512x512 "$DST_PATH/iTunesArtwork.png"
 info 'Generate iTunesArtwork@2x.png ...'
-convert "$SRC_FILE" -resize 1024x1024 "$DST_PATH/iTunesArtwork@2x.png"
+convert "$SRC_FILE" -alpha off -resize 1024x1024 "$DST_PATH/iTunesArtwork@2x.png"
 
 info 'Generate Icon-20.png ...'
-convert "$SRC_FILE" -resize 20x20 "$DST_PATH/Icon-20.png"
+convert "$SRC_FILE" -alpha off -resize 20x20 "$DST_PATH/Icon-20.png"
 info 'Generate Icon-20@2x.png ...'
-convert "$SRC_FILE" -resize 40x40 "$DST_PATH/Icon-20@2x.png"
+convert "$SRC_FILE" -alpha off -resize 40x40 "$DST_PATH/Icon-20@2x.png"
 info 'Generate Icon-40@2x.png ...'
-convert "$SRC_FILE" -resize 60x60 "$DST_PATH/Icon-20@3x.png"
+convert "$SRC_FILE" -alpha off -resize 60x60 "$DST_PATH/Icon-20@3x.png"
 
 info 'Generate Icon-29.png ...'
-convert "$SRC_FILE" -resize 29x29 "$DST_PATH/Icon-29.png"
+convert "$SRC_FILE" -alpha off -resize 29x29 "$DST_PATH/Icon-29.png"
 info 'Generate Icon-29@2x.png ...'
-convert "$SRC_FILE" -resize 58x58 "$DST_PATH/Icon-29@2x.png"
+convert "$SRC_FILE" -alpha off -resize 58x58 "$DST_PATH/Icon-29@2x.png"
 info 'Generate Icon-29@3x.png ...'
-convert "$SRC_FILE" -resize 87x87 "$DST_PATH/Icon-29@3x.png"
+convert "$SRC_FILE" -alpha off -resize 87x87 "$DST_PATH/Icon-29@3x.png"
 
 info 'Generate Icon-40.png ...'
-convert "$SRC_FILE" -resize 40x40 "$DST_PATH/Icon-40.png"
+convert "$SRC_FILE" -alpha off -resize 40x40 "$DST_PATH/Icon-40.png"
 info 'Generate Icon-40@2x.png ...'
-convert "$SRC_FILE" -resize 80x80 "$DST_PATH/Icon-40@2x.png"
+convert "$SRC_FILE" -alpha off -resize 80x80 "$DST_PATH/Icon-40@2x.png"
 info 'Generate Icon-40@3x.png ...'
-convert "$SRC_FILE" -resize 120x120 "$DST_PATH/Icon-40@3x.png"
+convert "$SRC_FILE" -alpha off -resize 120x120 "$DST_PATH/Icon-40@3x.png"
 
 info 'Generate Icon-60.png ...'
-convert "$SRC_FILE" -resize 60x60 "$DST_PATH/Icon-60.png"
+convert "$SRC_FILE" -alpha off -resize 60x60 "$DST_PATH/Icon-60.png"
 info 'Generate Icon-60@2x.png ...'
-convert "$SRC_FILE" -resize 120x120 "$DST_PATH/Icon-60@2x.png"
+convert "$SRC_FILE" -alpha off -resize 120x120 "$DST_PATH/Icon-60@2x.png"
 info 'Generate Icon-60@3x.png ...'
-convert "$SRC_FILE" -resize 180x180 "$DST_PATH/Icon-60@3x.png"
+convert "$SRC_FILE" -alpha off -resize 180x180 "$DST_PATH/Icon-60@3x.png"
 
 info 'Generate Icon-76.png ...'
-convert "$SRC_FILE" -resize 76x76 "$DST_PATH/Icon-76.png"
+convert "$SRC_FILE" -alpha off -resize 76x76 "$DST_PATH/Icon-76.png"
 info 'Generate Icon-76@2x.png ...'
-convert "$SRC_FILE" -resize 152x152 "$DST_PATH/Icon-76@2x.png"
+convert "$SRC_FILE" -alpha off -resize 152x152 "$DST_PATH/Icon-76@2x.png"
 
 info 'Generate Icon-57.png ...'
-convert "$SRC_FILE" -resize 57x57 "$DST_PATH/Icon-57.png"
+convert "$SRC_FILE" -alpha off -resize 57x57 "$DST_PATH/Icon-57.png"
 info 'Generate Icon-57@2x.png ...'
-convert "$SRC_FILE" -resize 114x114 "$DST_PATH/Icon-57@2x.png"
+convert "$SRC_FILE" -alpha off -resize 114x114 "$DST_PATH/Icon-57@2x.png"
 
 info 'Generate Icon-83.5@2x.png ...'
-convert "$SRC_FILE" -resize 167x167 "$DST_PATH/Icon-83.5@2x.png"
+convert "$SRC_FILE" -alpha off -resize 167x167 "$DST_PATH/Icon-83.5@2x.png"
 
 info 'Generate Icon-72.png ...'
-convert "$SRC_FILE" -resize 72x72 "$DST_PATH/Icon-72.png"
+convert "$SRC_FILE" -alpha off -resize 72x72 "$DST_PATH/Icon-72.png"
 info 'Generate Icon-72@2x.png ...'
-convert "$SRC_FILE" -resize 144x144 "$DST_PATH/Icon-72@2x.png"
+convert "$SRC_FILE" -alpha off -resize 144x144 "$DST_PATH/Icon-72@2x.png"
 
 info 'Generate Icon-50.png ...'
-convert "$SRC_FILE" -resize 50x50 "$DST_PATH/Icon-50.png"
+convert "$SRC_FILE" -alpha off -resize 50x50 "$DST_PATH/Icon-50.png"
 info 'Generate Icon-50@2x.png ...'
-convert "$SRC_FILE" -resize 100x100 "$DST_PATH/Icon-50@2x.png"
+convert "$SRC_FILE" -alpha off -resize 100x100 "$DST_PATH/Icon-50@2x.png"
 
 info 'Generate Done.'
