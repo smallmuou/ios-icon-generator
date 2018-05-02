@@ -15,10 +15,10 @@ DESCRIPTION:
     dstpath - The destination path where the icons generate to.
 
     This script is depend on ImageMagick. So you must install ImageMagick first
-    You can use 'sudo brew install ImageMagick' to install it
+    You can use 'brew install ImageMagick' to install it
 
 AUTHOR:
-    Pawpaw<lvyexuwenfa100@126.com>
+    smallmuou<smallmuou@163.com>
 
 LICENSE:
     This script follow MIT license.
@@ -31,10 +31,10 @@ EXAMPLE:
 ### Usage
 1. Install ImageMagick
 	
-	Before you run this script, please check whether you had install ImageMagick. If you don't have install. Follow this:
+Before you run this script, please check whether you had install ImageMagick. If you don't have install. Follow this:
 
 ```bash
-sudo brew install ImageMagick
+brew install ImageMagick
 ```	
 
 2. Clone And Chmod
