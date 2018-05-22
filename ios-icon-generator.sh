@@ -22,6 +22,7 @@
 
 set -e
 
+BASEDIR=$(dirname $0)
 SRC_FILE="$1"
 DST_PATH="$2"
 
@@ -136,5 +137,7 @@ info 'Generate Icon-50.png ...'
 convert "$SRC_FILE" -resize 50x50 "$DST_PATH/Icon-50.png"
 info 'Generate Icon-50@2x.png ...'
 convert "$SRC_FILE" -resize 100x100 "$DST_PATH/Icon-50@2x.png"
+
+cp $BASEDIR/Contents.json $DST_PATH/Contents.json
 
 info 'Generate Done.'
