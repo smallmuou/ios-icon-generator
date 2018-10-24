@@ -24,14 +24,14 @@ EXAMPLE:
 
 ### Usage
 
+1. Clone
 ```bash
 git clone https://github.com/smallmuou/ios-icon-generator
 cd ios-icon-generator
 chmod 777 ios-icon-generator.sh
-./ios-icon-generator 1024.png ~/output
 ```
 
-3. Run
+2. Run
 	
 ```bash
 smou:ios-icon-generator $ ./ios-icon-generator.sh 1024.png ~/output
