@@ -199,7 +199,7 @@ do
     size=`echo $line|awk '{print $2}'`
     info "Generate $name.png ..."
     if [ -f $srgb_profile ];then
-        sips --matchTo '/System/Library/ColorSync/Profiles/sRGB Profile.icc' -z $size $size $src_file --out $dst_path/$name.png >/dev/null 2>&1
+        sips --matchTo $srgb_profile -z $size $size $src_file --out $dst_path/$name.png >/dev/null 2>&1
     else
         sips -z $size $size $src_file --out $dst_path/$name.png >/dev/null
     fi
