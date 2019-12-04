@@ -124,6 +124,10 @@ if (($src_width != $src_height)); then
   warn "The height and width of the source image are different, will cause image deformation."
 fi
 
+if grep -q yes <(sips -g hasAlpha "$src_file"); then
+  warn "The source image contains an alpha channel, which may cause your app to be rejected.  Use ImageMagick to remove: mogrify -alpha off \"$src_file\""
+fi
+
 # create dst directory 
 mkdir -p "$dst_path"
 
@@ -171,14 +175,14 @@ EOF
 
 srgb_profile="/System/Library/ColorSync/Profiles/sRGB Profile.icc"
 if test -f "$srgb_profile"; then
-    set -- "--matchTo" "$srgb_profile"
+  set -- "--matchTo" "$srgb_profile"
 fi
 
 while read -r line; do
-    name=$(echo $line | awk '{print $1}')
-    size=$(echo $line | awk '{print $2}')
-    info "Generate $name.png ..."
-    sips "$@" -s dpiHeight 72 -s dpiWidth 72 -z $size $size "$src_file" --out "$dst_path/$name.png" &>/dev/null
+  name=$(echo $line | awk '{print $1}')
+  size=$(echo $line | awk '{print $2}')
+  info "Generate $name.png ..."
+  sips --deleteColorManagementProperties "$@" -s dpiHeight 72 -s dpiWidth 72 -z $size $size "$src_file" --out "$dst_path/$name.png" &>/dev/null
 done <<< "$sizes_mapper"
 
 info "Congratulation. All icons for iOS/macOS/watchOS APP are generate to the directory: $dst_path."
