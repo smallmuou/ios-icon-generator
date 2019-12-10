@@ -73,6 +73,7 @@ DESCRIPTION:
 
 OPTIONS:
     -h      Show this help message and exit
+    -n      Name for the generated icons, default is Icon
 
 EXAMPLES:
     $prog 1024.png ~/123
@@ -81,10 +82,15 @@ EOF
   exit 1
 }
 
-while getopts 'h' arg; do
+ICON="Icon"
+
+while getopts 'hn:' arg; do
   case $arg in
     h)
       usage
+      ;;
+    n)
+      ICON=$OPTARG
       ;;
     ?)
       # OPTARG
@@ -138,38 +144,38 @@ mkdir -p "$dst_path"
 # 
 # name size
 sizes_mapper=$(cat <<EOF
-Icon-16         16
-Icon-16@2x      32
-Icon-32         32
-Icon-32@2x      64
-Icon-128        128
-Icon-128@2x     256
-Icon-256        256
-Icon-256@2x     256
-Icon-512        512
-Icon-512@2x     1024
-Icon-20         20
-Icon-20@2x      40
-Icon-20@3x      60
-Icon-29         29
-Icon-29@2x      58
-Icon-29@3x      87
-Icon-40         40
-Icon-40@2x      80
-Icon-40@3x      120
-Icon-60@2x      120
-Icon-60@3x      180
-Icon-76         76
-Icon-76@2x      152
-Icon-83.5@2x    167
-Icon-1024       1024
-Icon-24@2x      48
-Icon-27.5@2x    55
-Icon-86@2x      172
-Icon-98@2x      196
-Icon-108@2x     216
-Icon-44@2x      88
-Icon-50@2x      100
+$ICON-16         16
+$ICON-16@2x      32
+$ICON-32         32
+$ICON-32@2x      64
+$ICON-128        128
+$ICON-128@2x     256
+$ICON-256        256
+$ICON-256@2x     256
+$ICON-512        512
+$ICON-512@2x     1024
+$ICON-20         20
+$ICON-20@2x      40
+$ICON-20@3x      60
+$ICON-29         29
+$ICON-29@2x      58
+$ICON-29@3x      87
+$ICON-40         40
+$ICON-40@2x      80
+$ICON-40@3x      120
+$ICON-60@2x      120
+$ICON-60@3x      180
+$ICON-76         76
+$ICON-76@2x      152
+$ICON-83.5@2x    167
+$ICON-1024       1024
+$ICON-24@2x      48
+$ICON-27.5@2x    55
+$ICON-86@2x      172
+$ICON-98@2x      196
+$ICON-108@2x     216
+$ICON-44@2x      88
+$ICON-50@2x      100
 EOF
 )
 
