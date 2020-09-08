@@ -216,7 +216,7 @@ do
     fi
 done
 
-info "Congratulation. All icons for iOS/macOS/watchOS APP are generate to the directory: $dst_path."
+info "Congratulations. All icons for iOS/macOS/watchOS APP are generate to the directory: $dst_path."
 
 IFS=$OLD_IFS
 
