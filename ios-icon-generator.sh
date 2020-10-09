@@ -206,6 +206,7 @@ do
         sips --matchTo '/System/Library/ColorSync/Profiles/sRGB Profile.icc' -z $size $size $src_file --out $dst_path/$name.png >/dev/null 2>&1
     else
         sips -z $size $size $src_file --out $dst_path/$name.png >/dev/null
+        sips -s format tiff -s formatOptions high $f -s dpiHeight 72.0 -s dpiWidth 72.0 -Z 1500
     fi
 done
 
