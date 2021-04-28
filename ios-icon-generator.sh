@@ -140,8 +140,8 @@ dst_path=$2
 [ ! -f "$src_file" ] && { error "The source file $src_file does not exist, please check it."; exit -1; }
 
 # check width and height 
-src_width=`sips -g pixelWidth $src_file 2>/dev/null|awk '/pixelWidth:/{print $NF}'`
-src_height=`sips -g pixelHeight $src_file 2>/dev/null|awk '/pixelHeight:/{print $NF}'`
+src_width=`sips -g pixelWidth "$src_file" 2>/dev/null|awk '/pixelWidth:/{print $NF}'`
+src_height=`sips -g pixelHeight "$src_file" 2>/dev/null|awk '/pixelHeight:/{print $NF}'`
 
 [ -z "$src_width" ] &&  { error "The source file $src_file is not a image file, please check it."; exit -1; }
 
