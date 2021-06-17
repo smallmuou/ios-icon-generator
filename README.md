@@ -19,6 +19,8 @@ AUTHOR:
 
 EXAMPLE:
     ./ios-icon-generator.sh 1024.png ~/123
+    - sh ios-icon-generator.sh 1024.png ~/123
+    - bash ios-icon-generator.sh 1024.png ~/123
 
 </pre>
 
