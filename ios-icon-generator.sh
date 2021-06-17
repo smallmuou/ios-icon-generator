@@ -106,7 +106,9 @@ OPTIONS:
     -h      Show this help message and exit
 
 EXAMPLES:
-    $prog 1024.png ~/123
+    - ./$prog 1024.png ~/123
+    - sh $prog 1024.png ~/123
+    - bash $prog 1024.png ~/123
 
 EOF
 exit 1
@@ -139,7 +141,7 @@ dst_path=$2
 # check source file
 [ ! -f "$src_file" ] && { error "The source file $src_file does not exist, please check it."; exit -1; }
 
-# check width and height 
+# check width and height of source file
 src_width=`sips -g pixelWidth $src_file 2>/dev/null|awk '/pixelWidth:/{print $NF}'`
 src_height=`sips -g pixelHeight $src_file 2>/dev/null|awk '/pixelHeight:/{print $NF}'`
 
