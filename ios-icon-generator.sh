@@ -166,7 +166,7 @@ Icon-32@2x      64
 Icon-128        128
 Icon-128@2x     256
 Icon-256        256
-Icon-256@2x     256
+Icon-256@2x     512
 Icon-512        512
 Icon-512@2x     1024
 Icon-20         20
