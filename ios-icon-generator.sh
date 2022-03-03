@@ -159,38 +159,38 @@ fi
 # 
 # name size
 sizes_mapper=`cat << EOF
-Icon-16         16
-Icon-16@2x      32
-Icon-32         32
-Icon-32@2x      64
-Icon-128        128
-Icon-128@2x     256
-Icon-256        256
-Icon-256@2x     256
-Icon-512        512
-Icon-512@2x     1024
-Icon-20         20
-Icon-20@2x      40
-Icon-20@3x      60
-Icon-29         29
-Icon-29@2x      58
-Icon-29@3x      87
-Icon-40         40
-Icon-40@2x      80
-Icon-40@3x      120
-Icon-60@2x      120
-Icon-60@3x      180
-Icon-76         76
-Icon-76@2x      152
-Icon-83.5@2x    167
-Icon-1024       1024
-Icon-24@2x      48
-Icon-27.5@2x    55
-Icon-86@2x      172
-Icon-98@2x      196
-Icon-108@2x     216
-Icon-44@2x      88
-Icon-50@2x      100
+icon_16         16
+icon_16@2x      32
+icon_32         32
+icon_32@2x      64
+icon_128        128
+icon_128@2x     256
+icon_256        256
+icon_256@2x     256
+icon_512        512
+icon_512@2x     1024
+icon_20         20
+icon_20@2x      40
+icon_20@3x      60
+icon_29         29
+icon_29@2x      58
+icon_29@3x      87
+icon_40         40
+icon_40@2x      80
+icon_40@3x      120
+icon_60@2x      120
+icon_60@3x      180
+icon_76         76
+icon_76@2x      152
+icon_83.5@2x    167
+icon_1024       1024
+icon_24@2x      48
+icon_27.5@2x    55
+icon_86@2x      172
+icon_98@2x      196
+icon_108@2x     216
+icon_44@2x      88
+icon_50@2x      100
 EOF`
 
 OLD_IFS=$IFS
@@ -209,7 +209,7 @@ do
     fi
 done
 
-info "Congratulation. All icons for iOS/macOS/watchOS APP are generate to the directory: $dst_path."
+info "Congratulations. All icons for iOS/macOS/watchOS APP are generated to the directory: $dst_path."
 
 IFS=$OLD_IFS
 
