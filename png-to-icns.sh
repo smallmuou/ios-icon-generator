@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # $1 : the filename of the PNG to turn into an icon, without the .png extension
